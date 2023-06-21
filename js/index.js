@@ -34,4 +34,50 @@ for (let skill of skills) {
     skillsList.appendChild(li);
 }
 
+// Handle Message Form Submit. Display Messages in List
+const messageForm = document.querySelector("[name='leave_message']");
 
+function toggleMessageSectionVisibility() {
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector("ul");
+    if (messageList.childElementCount === 0) {
+        messageSection.style.display = 'none';
+    } else {
+        messageSection.style.display = 'block';
+    }
+}
+
+messageForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const usersName = event.target.usersName.value;
+    const usersEmail = event.target.usersEmail.value;
+    const usersMessage = event.target.usersMessage.value;
+
+    console.log("Name:", usersName);
+    console.log("Email:", usersEmail);
+    console.log("Message:", usersMessage);
+
+    messageForm.reset();
+
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector("ul");
+    const newMessage = document.createElement("li");
+    newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName} </a><span>wrote: &nbsp${usersMessage} </span>`;
+
+    const removeButton = document.createElement("button");
+    removeButton.innerText = "remove";
+    removeButton.type = "button";
+    removeButton.className = "remove-button";
+
+    removeButton.addEventListener("click", () => {
+        const entry = removeButton.parentNode;
+        entry.remove();
+        toggleMessageSectionVisibility();
+    })
+
+    newMessage.appendChild(removeButton);
+    messageList.appendChild(newMessage);
+
+    // Function to hide the #messages section including its header when the list is empty
+    toggleMessageSectionVisibility();
+})
