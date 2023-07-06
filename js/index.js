@@ -8,7 +8,7 @@ const today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
-copyright.innerHTML = 'Larysa Bratukhina ' + '&#xA9; ' + thisYear;
+copyright.innerHTML = '&#xA9; ' + thisYear + ' Larysa Bratukhina ';
 footer.appendChild(copyright);
 
 // Add my skills to the skills sections
