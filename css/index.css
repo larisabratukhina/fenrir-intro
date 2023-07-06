@@ -2,6 +2,7 @@
     border: 5px solid rgb(138, 138, 241);
     border-radius: 50px 10px;
     margin-right: 20px;
+    margin-top: 40px;
 }
 
 body {
@@ -27,6 +28,8 @@ h2 {
 }
 
 #experience {
+    display: inline-block;
+    flex-direction: column;
     width: 700px;
     padding: 15px;
     margin: 5px;
@@ -87,6 +90,7 @@ button {
 }
 
 #leaveAmessage {
+    flex-direction: column;
     width: 500px;
     padding: 15px;
     margin: 5px;
@@ -132,3 +136,55 @@ footer {
             rgba(255, 255, 0, 0.5),
             rgba(0, 0, 255, 0.5))
 } */
+
+@media only screen and (max-width: 600px) {
+
+    /* Extra small devices (phones, 600px and down) */
+    .navBar {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+        align-items: center;
+    }
+
+    a.navItem {
+        padding-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    /* Small devices (tablets and large phones, 600px and up) */
+    .navBar {
+        display: inline-block;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+        height: 25px;
+        align-items: center;
+    }
+
+    a.navItem {
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    .navBar {
+        display: inline-block;
+        justify-content: space-between;
+        width: 500px;
+        padding: 10px;
+        margin: 10px;
+        height: 25px;
+        align-items: center;
+    }
+
+    a.navItem {
+        padding-left: 15px;
+    }
+}
