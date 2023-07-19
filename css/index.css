@@ -1,60 +1,50 @@
 #personalPhoto {
     border: 5px solid rgb(138, 138, 241);
-    border-radius: 50px 10px;
+    /* border-radius: 50px 10px; */
+    border-radius: 15px;
     margin-right: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
+}
+
+.photo-section {
+    background-color: #b9cef4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    margin: auto auto 10px;
+}
+
+header {
+    text-align: center;
+    font-weight: bold;
+    margin: auto auto 10px;
 }
 
 body {
     background-color: #b9cef4;
     color: rgb(22, 3, 42);
     font-family: Arial, Verdana, Helvetica, sans-serif;
-    padding-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 15px;
+    margin: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    background-color: #2cbaaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    margin: auto auto 10px;
 }
 
 h2 {
     font-size: 26px;
     font-weight: bold;
     color: rgb(6, 0, 12);
-}
-
-#about {
-    width: 500px;
-    padding: 15px;
-    margin: 5px;
-}
-
-#experience {
-    display: inline-block;
-    flex-direction: column;
-    width: 700px;
-    padding: 15px;
-    margin: 5px;
-}
-
-#skills {
-    list-style: square;
-    /* width: 500px; */
-    padding: 15px;
-    margin: 5px;
-    background-image: linear-gradient(to bottom,
-            rgba(0, 255, 221, 0.5),
-            rgba(0, 0, 255, 0.5))
-}
-
-#connect {
-    width: 500px;
-    padding: 15px;
-    margin: 5px;
-}
-
-#messages {
-    width: 500px;
-    padding-left: 20px;
-    margin: 5px;
 }
 
 label {
@@ -73,7 +63,7 @@ input {
 }
 
 textarea {
-    font-size: 25px;
+    font-size: 30px;
     color: blue;
     padding-left: 10px;
     border-radius: 15px;
@@ -89,15 +79,43 @@ button {
     box-sizing: border-box;
 }
 
-#leaveAmessage {
-    flex-direction: column;
-    width: 500px;
-    padding: 15px;
-    margin: 5px;
+footer {
+    background-color: rgb(135, 178, 238);
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgb(8, 3, 66);
+    text-align: center;
 }
 
-section {
-    padding: 10px;
+#about,
+#skills,
+#projects,
+#connect,
+#leaveAmessage,
+#experience,
+#messages {
+    width: 700px;
+}
+
+#experience ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#skills {
+    list-style: square;
+    background-image: linear-gradient(to bottom,
+            rgba(0, 255, 221, 0.5),
+            rgba(0, 0, 255, 0.5))
+}
+
+#leaveAmessage {
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    text-align: center;
 }
 
 .message-email {
@@ -109,33 +127,10 @@ section {
     border: 1px solid black;
     border-radius: 15px;
     padding: 10px;
+    padding-left: 20px;
     margin-bottom: 10px;
+    text-align: left;
 }
-
-footer {
-    background-color: rgb(135, 178, 238);
-    font-family: Arial, Verdana, Helvetica, sans-serif;
-    font-size: 20px;
-    color: rgb(8, 3, 66);
-    text-align: center;
-}
-
-/* #skills {
-    width: 500px;
-    border: 3px solid rgb(62, 10, 165);
-    padding: 15px;
-    margin: 5px;
-} */
-
-/* #skills {
-    list-style: square;
-    width: 500px;
-    padding: 15px;
-    margin: 5px;
-    background-image: radial-gradient(
-            rgba(255, 255, 0, 0.5),
-            rgba(0, 0, 255, 0.5))
-} */
 
 @media only screen and (max-width: 600px) {
 
@@ -177,7 +172,7 @@ footer {
     .navBar {
         display: inline-block;
         justify-content: space-between;
-        width: 500px;
+        width: 700px;
         padding: 10px;
         margin: 10px;
         height: 25px;
