@@ -72,3 +72,42 @@ messageForm.addEventListener("submit", (event) => {
     // Function to hide the #messages section including its header when the list is empty
     toggleMessageSectionVisibility();
 })
+
+// AJAX
+let githubRequest = new XMLHttpRequest();
+githubRequest.open('GET', 'https://api.github.com/users/larisabratukhina/repos');
+githubRequest.send();
+
+githubRequest.addEventListener('load', function () {
+    let repositories = JSON.parse(githubRequest.response);
+
+    console.log(repositories);
+
+    let projectSection = document.getElementById('projects');
+    let projectList = projectSection.querySelector('ul');
+
+    for (let i = 0; i < repositories.length; i++) {
+        let project = document.createElement('li');
+        let projectLink = document.createElement('a');
+
+        projectLink.href = repositories[i].html_url;
+        projectLink.innerText = repositories[i].name;
+        project.appendChild(projectLink);
+
+        let description = document.createElement('p');
+        if (repositories[i].description == null) {
+            description.innerText = "";
+        } else {
+            description.innerText = "Description: " + repositories[i].description;
+        }
+        project.appendChild(description);
+
+        let createdAt = document.createElement('p');
+        createdAt.innerText = "Created date of a repository: "
+            + new Date(repositories[i].created_at)
+                .toLocaleDateString();
+
+        project.appendChild(createdAt);
+        projectList.appendChild(project);
+    }
+});
